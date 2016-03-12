@@ -49,15 +49,6 @@ class Project extends Base
     protected $appends = ['status', 'title', 'thumb', 'category_name'];
 
     /**
-     * Columns that are file.
-     *
-     * @var array
-     */
-    public $attachments = [
-        'image',
-    ];
-
-    /**
      * Get public uri.
      *
      * @return string|null

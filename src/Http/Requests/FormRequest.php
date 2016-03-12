@@ -12,7 +12,6 @@ class FormRequest extends AbstractFormRequest
             'category_id' => 'required',
             'date'        => 'date',
             'website'     => 'url|max:255',
-            'image'       => 'image|max:2000',
             '*.title'     => 'max:255',
             '*.slug'      => 'alpha_dash|max:255',
         ];
