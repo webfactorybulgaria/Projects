@@ -10,7 +10,7 @@ class PublicController extends BasePublicController
 {
     public function __construct(ProjectInterface $project)
     {
-        parent::__construct($project);
+        parent::__construct($project, 'projects');
     }
 
     /**
