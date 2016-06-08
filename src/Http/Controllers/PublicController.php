@@ -33,7 +33,7 @@ class PublicController extends BasePublicController
      */
     public function index($category = null)
     {
-        $relatedModels = ['translations', 'category', 'category.translations'];
+        $relatedModels = ['category'];
         $models = $this->repository->allBy('category_id', $category->id, $relatedModels, false);
 
         return view('projects::public.index')

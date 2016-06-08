@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Projects\Models;
 
-use Dimsav\Translatable\Translatable;
+use TypiCMS\Modules\Core\Traits\Translatable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Laracasts\Presenter\PresentableTrait;
@@ -46,7 +46,7 @@ class Project extends Base
         'body',
     ];
 
-    protected $appends = ['status', 'title', 'thumb', 'category_name'];
+    protected $appends = ['thumb', 'category_name'];
 
     /**
      * Get public uri.

@@ -9,9 +9,9 @@
         }
     ],
     "require": {
-        "webfactorybulgaria/categories": "~4.0.0",
-        "webfactorybulgaria/tags": "~4.0.0",
-        "webfactorybulgaria/core": "~4.0.0"
+        "webfactorybulgaria/categories": "~4.1.0",
+        "webfactorybulgaria/tags": "~4.1.0",
+        "webfactorybulgaria/core": "~4.1.0"
     },
     "autoload": {
         "psr-4": {

@@ -11,6 +11,6 @@ class ProjectTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Projects\Models\Project', 'project_id');
+        return $this->belongsTo('TypiCMS\Modules\Projects\Models\Project', 'project_id')->withoutGlobalScopes();
     }
 }
