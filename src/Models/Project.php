@@ -88,10 +88,19 @@ class Project extends Base
     }
 
     /**
-     * Get name of the category from category table
-     * and append it to main model attributes.
+     * Append thumb attribute.
      *
-     * @return string title
+     * @return string
+     */
+    public function getThumbAttribute()
+    {
+        return $this->present()->thumbSrc(null, 22);
+    }
+
+    /**
+     * Append category_name attribute from translation table.
+     *
+     * @return string
      */
     public function getCategoryNameAttribute()
     {
