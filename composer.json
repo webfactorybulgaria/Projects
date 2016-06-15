@@ -9,9 +9,9 @@
         }
     ],
     "require": {
-        "webfactorybulgaria/categories": "dev-master",
-        "webfactorybulgaria/tags": "dev-master",
-        "webfactorybulgaria/core": "dev-master"
+        "webfactorybulgaria/categories": "dev-dev",
+        "webfactorybulgaria/tags": "dev-dev",
+        "webfactorybulgaria/core": "dev-dev"
     },
     "autoload": {
         "psr-4": {
