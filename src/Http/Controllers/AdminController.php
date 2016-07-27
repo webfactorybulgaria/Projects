@@ -3,6 +3,7 @@
 namespace TypiCMS\Modules\Projects\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Model;
+use TypiCMS\Modules\Categories\Models\Category;
 use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
 use TypiCMS\Modules\Projects\Http\Requests\FormRequest;
 use TypiCMS\Modules\Projects\Models\Project;
@@ -22,8 +23,8 @@ class AdminController extends BaseAdminController
      */
     public function index()
     {
-        $models = $this->repository->all([], true);
-        app('JavaScript')->put('models', $models);
+        $categories = Category::all([], true);
+        app('JavaScript')->put('options.categories', $categories);
 
         return view('projects::admin.index');
     }
