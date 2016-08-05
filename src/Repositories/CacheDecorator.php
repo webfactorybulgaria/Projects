@@ -2,8 +2,8 @@
 
 namespace TypiCMS\Modules\Projects\Repositories;
 
-use TypiCMS\Modules\Core\Repositories\CacheAbstractDecorator;
-use TypiCMS\Modules\Core\Services\Cache\CacheInterface;
+use TypiCMS\Modules\Core\Custom\Repositories\CacheAbstractDecorator;
+use TypiCMS\Modules\Core\Custom\Services\Cache\CacheInterface;
 
 class CacheDecorator extends CacheAbstractDecorator implements ProjectInterface
 {

@@ -3,7 +3,7 @@
 namespace TypiCMS\Modules\Projects\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
-use TypiCMS\Modules\Core\Repositories\RepositoriesAbstract;
+use TypiCMS\Modules\Core\Custom\Repositories\RepositoriesAbstract;
 
 class EloquentProject extends RepositoriesAbstract implements ProjectInterface
 {
