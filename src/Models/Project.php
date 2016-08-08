@@ -2,13 +2,13 @@
 
 namespace TypiCMS\Modules\Projects\Models;
 
-use TypiCMS\Modules\Core\Custom\Traits\Translatable;
+use TypiCMS\Modules\Core\Shells\Traits\Translatable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Laracasts\Presenter\PresentableTrait;
-use TypiCMS\Modules\Core\Custom\Facades\TypiCMS;
-use TypiCMS\Modules\Core\Custom\Models\Base;
-use TypiCMS\Modules\History\Custom\Traits\Historable;
+use TypiCMS\Modules\Core\Shells\Facades\TypiCMS;
+use TypiCMS\Modules\Core\Shells\Models\Base;
+use TypiCMS\Modules\History\Shells\Traits\Historable;
 
 class Project extends Base
 {
@@ -16,7 +16,7 @@ class Project extends Base
     use Translatable;
     use PresentableTrait;
 
-    protected $presenter = 'TypiCMS\Modules\Projects\Custom\Presenters\ModulePresenter';
+    protected $presenter = 'TypiCMS\Modules\Projects\Shells\Presenters\ModulePresenter';
 
     protected $dates = ['date'];
 
@@ -71,7 +71,7 @@ class Project extends Base
      */
     public function category()
     {
-        return $this->belongsTo('TypiCMS\Modules\Categories\Custom\Models\Category');
+        return $this->belongsTo('TypiCMS\Modules\Categories\Shells\Models\Category');
     }
 
     /**
@@ -81,7 +81,7 @@ class Project extends Base
      */
     public function galleries()
     {
-        return $this->morphToMany('TypiCMS\Modules\Galleries\Custom\Models\Gallery', 'galleryable')
+        return $this->morphToMany('TypiCMS\Modules\Galleries\Shells\Models\Gallery', 'galleryable')
             ->withPivot('position')
             ->orderBy('position')
             ->withTimestamps();

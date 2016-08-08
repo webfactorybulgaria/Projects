@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Projects\Repositories;
 
-use TypiCMS\Modules\Core\Custom\Repositories\RepositoryInterface;
+use TypiCMS\Modules\Core\Shells\Repositories\RepositoryInterface;
 
 interface ProjectInterface extends RepositoryInterface
 {
