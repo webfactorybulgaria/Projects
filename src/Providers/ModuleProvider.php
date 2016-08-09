@@ -5,15 +5,15 @@ namespace TypiCMS\Modules\Projects\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Core\Facades\TypiCMS;
-use TypiCMS\Modules\Core\Observers\FileObserver;
-use TypiCMS\Modules\Core\Observers\SlugObserver;
-use TypiCMS\Modules\Core\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Projects\Models\Project;
-use TypiCMS\Modules\Projects\Models\ProjectTranslation;
-use TypiCMS\Modules\Projects\Repositories\CacheDecorator;
-use TypiCMS\Modules\Projects\Repositories\EloquentProject;
-use TypiCMS\Modules\Tags\Observers\TagObserver;
+use TypiCMS\Modules\Core\Shells\Facades\TypiCMS;
+use TypiCMS\Modules\Core\Shells\Observers\FileObserver;
+use TypiCMS\Modules\Core\Shells\Observers\SlugObserver;
+use TypiCMS\Modules\Core\Shells\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Projects\Shells\Models\Project;
+use TypiCMS\Modules\Projects\Shells\Models\ProjectTranslation;
+use TypiCMS\Modules\Projects\Shells\Repositories\CacheDecorator;
+use TypiCMS\Modules\Projects\Shells\Repositories\EloquentProject;
+use TypiCMS\Modules\Tags\Shells\Observers\TagObserver;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -38,7 +38,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Projects',
-            'TypiCMS\Modules\Projects\Facades\Facade'
+            'TypiCMS\Modules\Projects\Shells\Facades\Facade'
         );
 
         // Observers
@@ -54,18 +54,18 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Projects\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Projects\Shells\Providers\RouteServiceProvider');
 
         /*
          * Register Tags and Categories
          */
-        $app->register('TypiCMS\Modules\Tags\Providers\ModuleProvider');
-        $app->register('TypiCMS\Modules\Categories\Providers\ModuleProvider');
+        $app->register('TypiCMS\Modules\Tags\Shells\Providers\ModuleProvider');
+        $app->register('TypiCMS\Modules\Categories\Shells\Providers\ModuleProvider');
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Projects\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Projects\Shells\Composers\SidebarViewComposer');
 
         /*
          * Add the page in the view.
@@ -74,7 +74,7 @@ class ModuleProvider extends ServiceProvider
             $view->page = TypiCMS::getPageLinkedToModule('projects');
         });
 
-        $app->bind('TypiCMS\Modules\Projects\Repositories\ProjectInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Projects\Shells\Repositories\ProjectInterface', function (Application $app) {
             $repository = new EloquentProject(
                 new Project()
             );

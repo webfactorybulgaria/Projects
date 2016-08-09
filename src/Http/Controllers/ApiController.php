@@ -3,9 +3,9 @@
 namespace TypiCMS\Modules\Projects\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Core\Http\Controllers\BaseApiController;
-use TypiCMS\Modules\Projects\Models\Project;
-use TypiCMS\Modules\Projects\Repositories\ProjectInterface as Repository;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseApiController;
+use TypiCMS\Modules\Projects\Shells\Models\Project;
+use TypiCMS\Modules\Projects\Shells\Repositories\ProjectInterface as Repository;
 
 class ApiController extends BaseApiController
 {
@@ -61,7 +61,7 @@ class ApiController extends BaseApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param \TypiCMS\Modules\Projects\Models\Project $project
+     * @param \TypiCMS\Modules\Projects\Shells\Models\Project $project
      *
      * @return \Illuminate\Http\JsonResponse
      */

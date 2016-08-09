@@ -3,8 +3,8 @@
 namespace TypiCMS\Modules\Projects\Http\Controllers;
 
 use Categories;
-use TypiCMS\Modules\Core\Http\Controllers\BasePublicController;
-use TypiCMS\Modules\Projects\Repositories\ProjectInterface;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BasePublicController;
+use TypiCMS\Modules\Projects\Shells\Repositories\ProjectInterface;
 
 class PublicController extends BasePublicController
 {
