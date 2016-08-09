@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Projects\Shells\Repositories;
 
-use TypiCMS\Modules\Projects\Repositories\EloquentProject as Base;
+use TypiCMS\Modules\Projects\Repositories\EloquentProject as BaseClass;
 
-class EloquentProject extends Base implements ProjectInterface
+class EloquentProject extends BaseClass implements ProjectInterface
 {
 
 }

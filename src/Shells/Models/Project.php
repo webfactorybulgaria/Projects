@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Projects\Shells\Models;
 
-use TypiCMS\Modules\Projects\Models\Project as Base;
+use TypiCMS\Modules\Projects\Models\Project as BaseClass;
 
-class Project extends Base
+class Project extends BaseClass
 {
 
 }

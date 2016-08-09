@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Projects\Shells\Presenters;
 
-use TypiCMS\Modules\Projects\Presenters\ModulePresenter as Base;
+use TypiCMS\Modules\Projects\Presenters\ModulePresenter as BaseClass;
 
-class ModulePresenter extends Base
+class ModulePresenter extends BaseClass
 {
 
 }
