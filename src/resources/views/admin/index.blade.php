@@ -29,7 +29,7 @@
                     <th st-sort="image" class="image st-sort">Image</th>
                     <th st-sort="date" class="date st-sort">Date</th>
                     <th st-sort="title" class="title st-sort">Title</th>
-                    <th st-sort="category_name" class="category st-sort">Category</th>
+                    <th st-sort="category_id" class="category st-sort">Category</th>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
@@ -61,7 +61,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody ng-class="{'table-loading':isLoading}">
                 <tr ng-repeat="model in displayedModels">
                     <td typi-btn-delete action="delete(model)"></td>
                     <td>
