@@ -4,7 +4,7 @@
 
 @section('main')
 
-<div ng-app="typicms" ng-cloak ng-controller="ListController">
+<div ng-app="typicms" ng-cloak ng-controller="ListController" ng-show="!initializing">
 
     @include('core::admin._button-create', ['module' => 'projects'])
 
